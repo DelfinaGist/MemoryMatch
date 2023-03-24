@@ -40,7 +40,7 @@ function matchCards(img1, img2){
 //         return disableDeck = true;
 //     } 
 //     // return shuffleCard();
-// }, 1900); 
+// }, 1200); 
         if(matchedCard == 8){ 
 // if matched value is 8 that means user has matched all the cards
 
