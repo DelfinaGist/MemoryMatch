@@ -33,8 +33,14 @@ function matchCards(img1, img2){
         score += 5
         scoreDisplay.innerHTML = score 
         matchedCard++; 
-//increment matched value by one
-
+// increment matched value by one
+// setTimeout(() => {
+//     if(matchedCard !=8) {
+//         scoreDisplay.innerHTML = "Game Lost!"  
+//         return disableDeck = true;
+//     } 
+//     // return shuffleCard();
+// }, 1900); 
         if(matchedCard == 8){ 
 // if matched value is 8 that means user has matched all the cards
 
@@ -98,3 +104,4 @@ cards.forEach(card => {
 
     card.addEventListener('click', flipCard); 
 });
+
