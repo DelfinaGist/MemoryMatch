@@ -1,5 +1,10 @@
-
 This is a Memory Matching game.
+
+Link to live site:
+https://delfinagist.github.io/MemoryMatch/
+
+Installation:
+Clone the repo and open index.html file.
 
 To play the game, click a tile to turn it over to reveal its image.
 There are 8 images, each image is on 2 tiles for a total of 16 tiles. 
@@ -12,3 +17,4 @@ This game is coded using
 JavaScript
 HTML
 CSS
+
