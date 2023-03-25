@@ -2,9 +2,9 @@ const cards = document.querySelectorAll('.card');
 let cardOne, cardTwo;
 let disableDeck = false;
 let matchedCard = 0; 
-let score = 0;
+const startButton = document.getElementById("Start-Button") 
 let scoreDisplay = document.getElementById("score")
-scoreDisplay.innerHTML = score
+
 function flipCard(e){ 
     let clickedCard = e.target; 
 //getting user clicked card
@@ -25,22 +25,52 @@ function flipCard(e){
         matchCards(cardOneImg, cardTwoImg);
     }
 }
+let time = 60
+scoreDisplay.innerHTML = `${time}s`
+disableDeck=true
+function startTimer(){
+    disableDeck=false
+    shuffleCard();
 
+    const timer = setInterval(() => {
+    if (matchedCard === 8) {
+        clearInterval(timer)
+        time = 60
+        scoreDisplay.innerHTML = "Game Won!"  
+        return disableDeck = true;
+    }
+    
+    time-- 
+    scoreDisplay.innerHTML = `${time}s`
+    if (time === 0) {
+        if(matchedCard !=8) {
+            clearInterval(timer) 
+            time = 60
+            scoreDisplay.innerHTML = "Game Lost!"  
+            return disableDeck = true;
+        } else {
+            clearInterval(timer)
+            scoreDisplay.innerHTML = "Game Won!" 
+            time = 60 
+            return disableDeck = true;
+        }
+    }
+   
+   
+}, 1000); 
+}
+startButton.addEventListener('click', () =>{
+    console.log ("buttonWorks")
+     startTimer()})
 function matchCards(img1, img2){ 
 
     if(img1 === img2){ 
 // if two cards img matched
-        score += 5
-        scoreDisplay.innerHTML = score 
+        
         matchedCard++; 
 // increment matched value by one
-setTimeout(() => {
-    if(matchedCard !=8) {
-        scoreDisplay.innerHTML = "Game Lost!"  
-        return disableDeck = true;
-    } 
-    // return shuffleCard();
-}, 1200); 
+
+
         if(matchedCard == 8){ 
 // if matched value is 8 that means user has matched all the cards
 
@@ -97,7 +127,7 @@ function shuffleCard(){
         imgTag.src = `images/img-${arr[index]}.png`;
     });
 }
-shuffleCard();
+// shuffleCard();
 
 cards.forEach(card => { 
 // adding click event to all cards

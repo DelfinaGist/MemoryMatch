@@ -10,6 +10,7 @@ body {
     align-items: center;
     /* justify-content: center; */
     min-height: 100vh;
+    background-color: rgb(161, 205, 219);
 }
 #seventy{
     height: 80px;
@@ -108,4 +109,21 @@ transform: rotateY(180deg);*/
     80%{
         transform: translateX(8px);
     }
+}
+.score-display {
+    display: flex;
+    /* flex-direction: column; */
+    justify-content: space-around;
+    align-items: center;
+    margin: 10px;
+    /* padding: 50px; */
+    /* background-color: red; */
+    width: 300px;
+}
+#Start-Button {
+    background-color: #3dc69f;
+    color: rgb(0, 0, 0);
+    border-radius: 10px;
+    /* padding-top: 20px; */
+    padding: 10px 30px; 
 }
